@@ -1,11 +1,17 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require("bcrypt")
+
 
 class Garden extends Model {}
 
 Garden.init({
     // add properites here, ex:
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        autoIncrement: true,
+        primaryKey: true
+    },
     user_id: {
          type: DataTypes.INTERGER,
          allowNull:false,
@@ -13,8 +19,10 @@ Garden.init({
          validate:{
             isAlphanumeric:true
          }, 
-         references: a
-         //TODO:ref user table id
+         references: {
+                model: 'User',
+                key: 'id',
+              },
          
     },
     plant_id:{
@@ -23,8 +31,10 @@ Garden.init({
         validate:{
             isNumber:true
         },
-        references:a
-        //TODO:ref plant table id
+        references: {
+            model: 'Plant',
+            key: 'id',
+          }
     }
 },{
     sequelize
