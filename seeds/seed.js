@@ -69,121 +69,117 @@ const seed = async ()=>{
             user_id: 4,
             plant_id: 4
         },
-    ]
-    )
+    ])
 
      const plant = await Plant.bulkCreate([
         {
             plant_name:"Calendula",
-            plant_type: 2,
-            plant_climate: 1,
+            type_id: 2,
+            climate_id: 1,
             health_id: 3
-
         },
         {
             plant_name:"Chamomile",
-            plant_type: 2,
-            plant_climate: 3,
+            type_id: 2,
+            climate_id: 3,
             health_id: 4
         },
         {
             plant_name:"Peppermint",
-            plant_type: 1,
-            plant_climate: 3,
+            type_id: 1,
+            climate_id: 3,
             health_id: 2
         },
         {
             plant_name:"Holy Basil",
-            plant_type: 3,
-            plant_climate: 1,
+            type_id: 3,
+            climate_id: 1,
             health_id: 5
         },
         {
             plant_name:"English Lavender",
-            plant_type: 3,
-            plant_climate: 1,
+            type_id: 3,
+            climate_id: 1,
             health_id: 5
         },
         {
             plant_name:"Hawthorn",
-            plant_type: 4,
-            plant_climate: 1,
+            type_id: 4,
+            climate_id: 1,
             health_id: 6
         },
         {
             plant_name:"Sage",
-            plant_type: 1,
-            plant_climate: 2,
+            type_id: 1,
+            climate_id: 2,
             health_id: 6
         },
         {
             plant_name:"Yarrow",
-            plant_type: 2,
-            plant_climate: 1,
+            type_id: 2,
+            climate_id: 1,
             health_id: 6
         },
         {
             plant_name:"Echinacea",
-            plant_type: 1,
-            plant_climate: 1,
+            type_id: 1,
+            climate_id: 1,
             health_id: 8
         },
         {
             plant_name:"Nettle",
-            plant_type: 3,
-            plant_climate: 3,
+            type_id: 3,
+            climate_id: 3,
             health_id: 9
         },
         {
             plant_name:"Ginger",
-            plant_type: 2,
-            plant_climate: 3,
+            type_id: 2,
+            climate_id: 3,
             health_id: 10
         },
         {
             plant_name:"Turmeric",
-            plant_type: 2,
-            plant_climate: 2,
+            type_id: 2,
+            climate_id: 2,
             health_id: 11
         },
-    ]
-    )
+    ])
 
      const health = await Health.bulkCreate([
         {
-            name:"Headache",
+            benefits:"Headache Relief",
         },
         {
-            name:"Stomach Ache",
+            benefits:"Digestion Aid",
         },
         {
-            name:"Inflammation",
+            benefits:"Anti-Inflammatory",
         },
         {
-            name:"Insomnia",
+            benefits:"Sleep",
         },
         {
-            name:"Stress",
+            benefits:"Stress Relief",
         },
         {
-            name:"Circulation",
+            benefits:"Circulation",
         },
         {
-            name:"Anxiety",
+            benefits:"Anti-Anxiety",
         },
         {
-            name:"Infection",
+            benefits:"Antiviral",
         },
         {
-            name:"Allergies",
+            benefits:"Allergy Relief",
         },
         {
-            name:"Nausea",
+            benefits:"Anti-Nausea",
         },
         {
-            name:"Pain"
-        },
-        
+            benefits:"Pain Relief"
+        }
     ])
 
      const type = await Type.bulkCreate([
