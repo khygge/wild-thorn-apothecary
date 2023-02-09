@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 
-class Garden extends Model {}
+class Plant extends Model {}
 
-Garden.init({
+Plant.init({
     // add properites here, ex:
     id: {
         type: DataTypes.INTEGER,
@@ -21,32 +21,24 @@ Garden.init({
          }
          
     },
-    type_id:{
-        type:DataTypes.INTERGER,
+    type:{
+        type:DataTypes.STRING,
         allowNull:false,
         validate:{
-            isNumber:true
-        },
-        references: {
-            model: 'Type',
-            key: 'id',
-          },
-        //TODO:ref type table name ? or [ choices like bball api]
+            isAlphanumeric:true
+        }
+        
     },
-    climate_id:{
-        type:DataTypes.INTERGER,
+    climate:{
+        type:DataTypes.STRING,
         allowNull:false,
         validate:{
-            isNumber:true
-        },
-        references: {
-            model: 'Climate',
-            key: 'id',
-          },
-        // TODO: ref climate table? or choices like bball api
+            isAlphanumeric:true
+        }
+       
     },
     health_id:{
-        type:DataTypes.INTERGER,
+        type:DataTypes.INTEGER,
         allowNull:false,
         validate:{
             isNumber:true
@@ -54,19 +46,11 @@ Garden.init({
         references: {
             model: 'Health',
             key: 'id',
-          },
-        // TODO: ref health table
-    },
-    price:{
-        type:DataTypes.DECIMAL,
-        allowNull:false,
-        validate:{
-            isDecimal:true
-        }
-    },
+          }
+    }
 
 },{
     sequelize
 });
 
-module.exports=Garden
+module.exports=Plant
