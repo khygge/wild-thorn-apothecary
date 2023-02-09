@@ -1,48 +1,45 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-const bcrypt = require("bcrypt")
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
+const bcrypt = require("bcrypt");
 
 class User extends Model {}
 
-User.init({
+User.init(
+  {
     // add properites here, ex:
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull:false,
-        autoIncrement: true,
-        primaryKey: true
-    },
     user_email: {
-         type: DataTypes.STRING,
-         allowNull:false,
-         unique:true,
-         validate:{
-            isEmail:true
-         }
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
     },
     username: {
-         type: DataTypes.STRING,
-         allowNull:false,
-         unique:true,
-         validate:{
-            isAlphanumeric:true
-         }
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isAlphanumeric: true,
+      },
     },
-    password:{
-        type:DataTypes.STRING,
-        allowNull:false,
-        validate:{
-            len:[8]
-        }
-    }
-},{
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8],
+      },
+    },
+  },
+  {
     sequelize,
-    hooks:{
-        beforeCreate:userObj=>{
-            userObj.password = bcrypt.hashSync(userObj.password,4);
-            return userObj;
-        }
-    }
-});
+    hooks: {
+      beforeCreate: (userObj) => {
+        userObj.password = bcrypt.hashSync(userObj.password, 4);
+        return userObj;
+      },
+    },
+  }
+);
 
-module.exports=User
+module.exports = User;
