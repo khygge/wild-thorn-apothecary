@@ -1,0 +1,78 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root {
+    --background: #F6F3E4;
+    --header: #8CB4A2;
+    --cards: #B8DECD;
+    --text: #341F0C;
+}
+
+body {
+    background: var(--background);
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.filigree{
+    width: 180px;
+    height: 70px;
+    margin: 10px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    background: var(--header);
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo-text {
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 60px;
+    color: var(--text);
+}
+
+.header-button {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 24px;
+    color: var(--text);
+    background: linear-gradient(#F6F3E4, transparent) var(--background);
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 0.7s;
+}
+
+.header-button:hover {
+    background-color: #a7987ec4;
+}
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 30px;
+    padding: 20px;
+    background: var(--cards);
+}
+
+.poster {
+    width: 495px;
+    margin: 10px;
+    border: 8px solid var(--header);
+}
+
+.side-content {
+    display: flex;
+    flex-direction: column;
+}
