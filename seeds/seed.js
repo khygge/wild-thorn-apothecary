@@ -1,5 +1,5 @@
 const sequelize = require("../config/connection")
-const {User, Garden, Plant, Health, Type, Climate} = require("../models")
+const {User, Garden, Plant, Health} = require("../models")
 
 const seed = async ()=>{
     await sequelize.sync({force:true});
@@ -74,74 +74,74 @@ const seed = async ()=>{
      const plant = await Plant.bulkCreate([
         {
             plant_name:"Calendula",
-            type_id: 2,
-            climate_id: 1,
+            type: "Flower",
+            climate: "Full Sun",
             health_id: 3
         },
         {
             plant_name:"Chamomile",
-            type_id: 2,
-            climate_id: 3,
+            type: "Flower",
+            climate: "Partial Shade",
             health_id: 4
         },
         {
             plant_name:"Peppermint",
-            type_id: 1,
-            climate_id: 3,
+            type: "Herb",
+            climate: "Partial Shade",
             health_id: 2
         },
         {
             plant_name:"Holy Basil",
-            type_id: 3,
-            climate_id: 1,
+            type: "Shrub",
+            climate: "Full Sun",
             health_id: 5
         },
         {
             plant_name:"English Lavender",
-            type_id: 3,
-            climate_id: 1,
+            type: "Shrub",
+            climate: "Full Sun",
             health_id: 5
         },
         {
             plant_name:"Hawthorn",
-            type_id: 4,
-            climate_id: 1,
+            type: "Tree",
+            climate: "Full Sun",
             health_id: 6
         },
         {
             plant_name:"Sage",
-            type_id: 1,
-            climate_id: 2,
+            type: "Herb",
+            climate: "Partial Sun",
             health_id: 6
         },
         {
             plant_name:"Yarrow",
-            type_id: 2,
-            climate_id: 1,
+            type: "Flower",
+            climate: "Full Sun",
             health_id: 6
         },
         {
             plant_name:"Echinacea",
-            type_id: 1,
-            climate_id: 1,
+            type: "Herb",
+            climate: "Full Sun",
             health_id: 8
         },
         {
             plant_name:"Nettle",
-            type_id: 3,
-            climate_id: 3,
+            type: "Shrub",
+            climate: "Partial Shade",
             health_id: 9
         },
         {
             plant_name:"Ginger",
-            type_id: 2,
-            climate_id: 3,
+            type: "Flower",
+            climate: "Partial Shade",
             health_id: 10
         },
         {
             plant_name:"Turmeric",
-            type_id: 2,
-            climate_id: 2,
+            type: "Flower",
+            climate: "Partial Sun",
             health_id: 11
         },
     ])
@@ -179,39 +179,6 @@ const seed = async ()=>{
         },
         {
             benefits:"Pain Relief"
-        }
-    ])
-
-     const type = await Type.bulkCreate([
-        {
-            type:"Herb",
-        },
-        {
-            type:"Flower",
-        },
-        {
-            type:"Shrub",
-        },
-        {
-            type:"Tree",
-        },
-        {
-            type: "Vine"
-        }
-    ])
-
-    const climate = await Climate.bulkCreate([
-        {
-            climate:"Full Sun",
-        },
-        {
-            climate:"Partial Sun",
-        },
-        {
-            climate:"Partial Shade",
-        },
-        {
-            climate:"Shade",
         }
     ])
     process.exit(1)
