@@ -1,28 +1,20 @@
 const User = require("./User");
-const Garden = require("./Garden");
 const Health = require("./Health");
 const Plant = require("./Plant");
 
+Plant.belongsToMany(User, {
+  through: "UserPlant",
+});
 
-Garden.belongsTo(User,{
-    onDelete:"SET NULL"
-})
-User.hasOne(Garden)
+User.belongsToMany(Plant, {
+  through: "UserPlant",
+});
 
-Plant.belongsTo(Garden,{
-    onDelete:"SET NULL"
-})
-Garden.hasMany(Plant)
-
-Health.belongsTo(Plant,{
-    onDelete:"SET NULL"
-})
-Plant.hasMany(Health)
-
+Health.belongsTo(Plant);
+Plant.hasMany(Health);
 
 module.exports = {
-    User,
-    Garden,
-    Health,
-    Plant
-}
+  User,
+  Health,
+  Plant,
+};
