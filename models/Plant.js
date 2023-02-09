@@ -1,11 +1,17 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require("bcrypt")
+
 
 class Garden extends Model {}
 
 Garden.init({
     // add properites here, ex:
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        autoIncrement: true,
+        primaryKey: true
+    },
     plant_name: {
          type: DataTypes.STRING,
          allowNull:false,
@@ -21,7 +27,10 @@ Garden.init({
         validate:{
             isNumber:true
         },
-        references:a
+        references: {
+            model: 'Type',
+            key: 'id',
+          },
         //TODO:ref type table name ? or [ choices like bball api]
     },
     climate_id:{
@@ -30,7 +39,10 @@ Garden.init({
         validate:{
             isNumber:true
         },
-        references:a
+        references: {
+            model: 'Climate',
+            key: 'id',
+          },
         // TODO: ref climate table? or choices like bball api
     },
     health_id:{
@@ -39,14 +51,16 @@ Garden.init({
         validate:{
             isNumber:true
         },
-        references:a
+        references: {
+            model: 'Health',
+            key: 'id',
+          },
         // TODO: ref health table
     },
     price:{
         type:DataTypes.DECIMAL,
         allowNull:false,
         validate:{
-            // unsure if this is right validator
             isDecimal:true
         }
     },
