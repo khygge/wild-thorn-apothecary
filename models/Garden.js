@@ -13,7 +13,7 @@ Garden.init({
         primaryKey: true
     },
     user_id: {
-         type: DataTypes.INTERGER,
+         type: DataTypes.INTEGER,
          allowNull:false,
          unique:true,
          validate:{
@@ -26,7 +26,7 @@ Garden.init({
          
     },
     plant_id:{
-        type:DataTypes.INTERGER,
+        type:DataTypes.INTEGER,
         allowNull:false,
         validate:{
             isNumber:true
