@@ -7,7 +7,7 @@ const Plant = require("./Plant");
 Garden.belongsTo(User,{
     onDelete:"SET NULL"
 })
-User.hasMany(Garden)
+User.hasOne(Garden)
 
 Plant.belongsTo(Garden,{
     onDelete:"SET NULL"
