@@ -9,8 +9,32 @@
     </header>
 
     <main>
-        
+        <div class="plant-box">
+            <div class="garden">
+                <div class="plants">
+                    {{> chamomile}}
+                </div>
+            </div>
+        </div>
+
+        <div class="search">
+            <form>
+                <input type="text" placeholder="Enter plant name...">
+                <button type="submit"></button>
+            </form>
+        </div>
+
+        <button class="email-me">Email Me</button>
     </main>
+
+    <footer>
+        <div class="bottom-buttons">
+            <button type="button" class="footer-button">Home</button>
+            <button type="button" class="footer-button">About Us</button>
+            <button type="button" class="footer-button">Our Plants</button>
+            <button type="button" class="footer-button">Contact Us</button>
+        </div>
+    </footer>
 
     <!--add in "send email" button-->
     <script src="/js/garden.js"></script>
