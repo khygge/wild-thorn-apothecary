@@ -135,11 +135,13 @@ header {
     flex-direction: row;
     text-decoration: none;
     align-items: center;
+    justify-content: center;
 }
 
 .item-card {
     background: var(--cards);
     padding: 15px;
+    width: 75vw;
 }
 
 .item-card h2 {
