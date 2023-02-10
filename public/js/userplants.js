@@ -1,8 +1,8 @@
-document.getElementById("home-btn").addEventListener('click', function() {
-    location.href = "/";
+document.getElementById("my-garden-btn").addEventListener('click', function() {
+    location.href = "/garden";
 });
 
-document.getElementById("signout-btn").addEventListener("click", e => {
+document.getElementById("sign-out-btn").addEventListener("click", e => {
     e.preventDefault();
     fetch("/api/users/logout",{
         method:"GET",
