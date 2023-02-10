@@ -1,5 +1,5 @@
 const sequelize = require("../config/connection");
-const { User, Garden, Plant, Health } = require("../models");
+const { User, Plant, Health } = require("../models");
 
 const seed = async () => {
   await sequelize.sync({ force: true });
@@ -142,7 +142,17 @@ const seed = async () => {
     },
   ]);
 
-  await user[0].addPlants([1, 3, 5]);
+  const seedPlantsToUsers = async () => {
+    for (let i = 0; i < user.length; i++) {
+      await user[i].addPlant([
+        Math.floor(Math.random() * plant.length),
+        Math.floor(Math.random() * plant.length),
+      ]);
+    }
+  };
+
+  await seedPlantsToUsers();
+
   process.exit(1);
 };
 
