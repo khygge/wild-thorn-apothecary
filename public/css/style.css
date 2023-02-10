@@ -269,3 +269,20 @@ input {
     border-radius: 5px;
     background: var(--background);
 }
+
+.submit-button {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 25px;
+    color: var(--text);
+    background: linear-gradient(#F6F3E4, transparent) var(--background);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.7s;
+    height: 50px;
+    width: 20vw;
+}
+
+.submit-button:hover {
+    background-color: #a7987e90;
+}
