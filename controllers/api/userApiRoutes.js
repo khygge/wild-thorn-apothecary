@@ -9,4 +9,11 @@ router.get("/", async (req, res) => {
   res.json(findUsers);
 });
 
+router.get("/:userid", async (req, res) => {
+  const findOneUser = await User.findByPk(req.params.userid, {
+    include: [Plant],
+  });
+  res.json(findOneUser);
+});
+
 module.exports = router;
