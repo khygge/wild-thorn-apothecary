@@ -22,6 +22,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .filigree{
@@ -85,7 +86,7 @@ header {
     background: var(--background);
     border: none;
     font-family: 'Fredericka the Great', cursive;
-    font-size: 25px;
+    font-size: 30px;
     padding: 25px;
     margin: 20px;
 }
@@ -105,27 +106,32 @@ header {
     background-color: #a7987e90;
 }
 
-.featured {
+.featured,
+.user-plants {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.featured h1 {
+.featured h1,
+.user-plants h1 {
     font-size: 50px;
     font-family: 'Fredericka the Great', cursive;
     line-height: 10px;
     margin-top: 50px;
     background: var(--cards);
-
-    padding: 25px;
-    border-radius: 2px;
+    padding: 30px;
+    border-radius: 10px;
 }
 
-.feature-item {
+.user-plants {
+    margin-top: 20px;
+}
+
+.feature-item,
+.user-item {
     display: flex;
     flex-direction: row;
-    margin: 20px;
     text-decoration: none;
     align-items: center;
 }
@@ -146,7 +152,8 @@ header {
     font-size: 20px;
 }
 
-.feature-item img {
+.feature-item img,
+.user-item img {
     width: 273px;
     height: 273px;
     border-radius: 100%;
