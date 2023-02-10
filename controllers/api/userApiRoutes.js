@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const { User, Plant, Health } = require("../../models");
+const { Op } = require("sequelize");
+const bcrypt = require("bcrypt");
 
 router.get("/", async (req, res) => {
   const findUsers = await User.findAll({
@@ -39,6 +41,29 @@ router.post("/:userid/:plantid", async (req, res) => {
       res.json(addPlantToUser);
     }
   }
+});
+
+router.post("/signin",(req,res)=>{
+  User.findOne({
+  where:{
+   username:req.body.username
+  }
+  }).then(userData => {
+   if (!userData){
+       return res.status(401).json({msg:"Incorrect email or password."})
+   } else {
+       if (bcrypt.compareSync(req.body.password, userData.password)){
+           req.session.userId = userData.id;
+           req.session.username = userData.username;
+           return res.json(userData)
+       } else {
+           return res.status(401).json({msg:"Incorrect email or password."})
+       }
+   }
+  }).catch(err=>{
+   console.log(err);
+   res.status(500).json({msg:"Gosh dangit!",err})
+  })
 });
 
 module.exports = router;
