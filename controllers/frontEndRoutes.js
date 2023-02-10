@@ -21,4 +21,8 @@ router.get("/userplants", (req, res) => {
   res.render("userplants");
 });
 
+router.get("/ourplants", (req, res) => {
+  res.render("plantslist");
+});
+
 module.exports = router;

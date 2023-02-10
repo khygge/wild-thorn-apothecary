@@ -1,7 +1,3 @@
-document.getElementById("my-garden-btn").addEventListener('click', function() {
-    location.href = "/garden";
-});
-
 document.getElementById("sign-out-btn").addEventListener("click", e => {
     e.preventDefault();
     fetch("/api/users/logout",{

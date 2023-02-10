@@ -15,7 +15,7 @@ document.querySelector("#signin-form").addEventListener("submit", e => {
         if(res.ok){
            location.href="/userplants"
         } else {
-            alert("BINGUS")
+            alert("Incorrect username or password.")
         }
     })
 });
