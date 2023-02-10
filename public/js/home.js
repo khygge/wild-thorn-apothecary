@@ -1,7 +1,3 @@
-const signinBtn = document.getElementById("signin-btn");
-
-const signIn = () => {
-    location.href = "/signin"
-}
-
-signinBtn.addEventListener("click", signIn)
+document.getElementById("signin-btn").addEventListener('click', function() {
+    location.href = "/signin";
+});
