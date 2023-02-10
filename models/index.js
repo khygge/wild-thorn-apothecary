@@ -2,6 +2,9 @@ const User = require("./User");
 const Health = require("./Health");
 const Plant = require("./Plant");
 
+Health.belongsToMany(Plant, { through: "PlantHealth" });
+Plant.belongsToMany(Health, { through: "PlantHealth" });
+
 Plant.belongsToMany(User, {
   through: "UserPlant",
 });
@@ -9,9 +12,6 @@ Plant.belongsToMany(User, {
 User.belongsToMany(Plant, {
   through: "UserPlant",
 });
-
-Health.belongsTo(Plant);
-Plant.hasMany(Health);
 
 module.exports = {
   User,
