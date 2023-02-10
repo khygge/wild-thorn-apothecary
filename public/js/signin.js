@@ -20,6 +20,7 @@ document.querySelector("#signInForm").addEventListener("submit",e=>{
         Object.assign(signinObj, { username: document.querySelector("#signInEmailUsername").value });
     }
     
+
     
     console.log(signinObj)
 
