@@ -13,7 +13,7 @@
 
 body {
     background: var(--background);
-    /* background-image: url(/images/background.png); */
+    background-image: url(/images/background.png);
     margin: 0;
     padding: 0;
 }
@@ -116,6 +116,10 @@ header {
     font-family: 'Fredericka the Great', cursive;
     line-height: 10px;
     margin-top: 50px;
+    background: var(--cards);
+
+    padding: 25px;
+    border-radius: 2px;
 }
 
 .feature-item {
@@ -207,4 +211,61 @@ header {
 
 .footer-button:hover {
     background-color: #21542790;
+}
+
+
+/* =======SIGN UP PAGE======= */
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.title-card {
+    background: var(--header);
+    text-align: center;
+    padding: 25px;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 50px;
+    border-radius: 5px;
+}
+
+.input-card {
+    display: flex;
+    justify-content: center;
+}
+
+.input-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 25px;
+    background: var(--cards);
+    width: 50%;
+    border: 8px solid var(--header);
+    border-radius: 5px;
+}
+
+.input-info a {
+    margin: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input {
+    height: 30px;
+    width: 30vw;
+    border: none;
+    border-radius: 5px;
+    background: var(--background);
 }
