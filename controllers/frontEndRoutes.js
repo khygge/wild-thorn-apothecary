@@ -17,8 +17,8 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/", (req, res) => {
-  res.render("home");
+router.get("/userplants", (req, res) => {
+  res.render("userplants");
 });
 
 module.exports = router;
