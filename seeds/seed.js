@@ -1,5 +1,5 @@
 const sequelize = require("../config/connection");
-const { User, Garden, Plant, Health } = require("../models");
+const { User, Plant, Health } = require("../models");
 
 const seed = async () => {
   await sequelize.sync({ force: true });
@@ -72,77 +72,84 @@ const seed = async () => {
       plant_name: "Calendula",
       type: "Flower",
       climate: "Full Sun",
-      HealthId: 3,
     },
     {
       plant_name: "Chamomile",
       type: "Flower",
       climate: "Partial Shade",
-      HealthId: 4,
     },
     {
       plant_name: "Peppermint",
       type: "Herb",
       climate: "Partial Shade",
-      HealthId: 2,
     },
     {
       plant_name: "Holy Basil",
       type: "Shrub",
       climate: "Full Sun",
-      HealthId: 5,
     },
     {
       plant_name: "English Lavender",
       type: "Shrub",
       climate: "Full Sun",
-      HealthId: 5,
     },
     {
       plant_name: "Hawthorn",
       type: "Tree",
       climate: "Full Sun",
-      HealthId: 6,
     },
     {
       plant_name: "Sage",
       type: "Herb",
       climate: "Partial Sun",
-      HealthId: 6,
     },
     {
       plant_name: "Yarrow",
       type: "Flower",
       climate: "Full Sun",
-      HealthId: 6,
     },
     {
       plant_name: "Echinacea",
       type: "Herb",
       climate: "Full Sun",
-      HealthId: 8,
     },
     {
       plant_name: "Nettle",
       type: "Shrub",
       climate: "Partial Shade",
-      HealthId: 9,
     },
     {
       plant_name: "Ginger",
       type: "Flower",
       climate: "Partial Shade",
-      HealthId: 10,
     },
     {
       plant_name: "Turmeric",
       type: "Flower",
       climate: "Partial Sun",
-      HealthId: 11,
     },
   ]);
 
-  await user[0].addPlants([1, 3, 5]);
+  const seedPlantsToUsers = async () => {
+    for (let i = 0; i < user.length; i++) {
+      await user[i].addPlants([
+        Math.floor(Math.random() * plant.length + 1),
+        Math.floor(Math.random() * plant.length + 1),
+      ]);
+    }
+  };
+  const seedHealthToPlants = async () => {
+    for (let i = 0; i < plant.length; i++) {
+      await plant[i].addHealth([
+        Math.floor(Math.random() * health.length + 1),
+        Math.floor(Math.random() * health.length + 1),
+      ]);
+    }
+  };
+
+  await seedPlantsToUsers();
+  await seedHealthToPlants();
+
   process.exit(1);
 };
 
