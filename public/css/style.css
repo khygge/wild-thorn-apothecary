@@ -12,7 +12,7 @@
 }
 
 body {
-    background: var(--background);
+    /* background: var(--background); */
     background-image: url(/images/background.png);
     margin: 0;
     padding: 0;
@@ -57,7 +57,8 @@ header {
 }
 
 .header-button:hover {
-    background-color: #a7987e90;
+    /* background-color: #a7987e90; */
+    background-color: #8cb4a2a4;
 }
 
 .hero {
@@ -292,4 +293,62 @@ input {
 
 .submit-button:hover {
     background-color: #a7987e90;
+}
+
+/* ========GARDEN PAGE======== */
+
+
+.plant-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.garden {
+    display: flex;
+    flex-direction: column;
+    background: var(--background);
+    border: 8px solid var(--header);
+    /* background-image: url(/images/paper-bg.jpg); */
+    width: 95vw;
+    height: auto;
+    margin: 20px;
+}
+
+.plants {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.item {
+    margin: 20px;
+}
+
+.plant-img {
+    width: 273px;
+    height: 273px;
+    border-radius: 100%;
+    border: 8px solid var(--header);
+}
+
+.item p {
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 30px;
+    text-align: center;
+    line-height: 0;
+}
+
+.delete-icon {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+.caption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
