@@ -6,7 +6,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/garden", (req, res) => {
-  res.render("gardenplants");
+  res.render("garden");
 });
 
 router.get("/signin", (req, res) => {
