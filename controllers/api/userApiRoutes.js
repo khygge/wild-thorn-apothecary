@@ -35,6 +35,10 @@ router.post("/", async (req, res) => {
       username: req.body.username,
       password: req.body.password,
     });
+    req.session.userId = createNewuser.id;
+    req.session.username = createNewuser.username;
+    req.session.user_email = createNewuser.user_email;
+    req.session.loggedIn = true;
     res.send(createNewuser);
   } catch (err) {
     console.log(err);
@@ -63,31 +67,34 @@ router.post("/:userid/:plantid", async (req, res) => {
   }
 });
 
-router.post("/signin",(req,res)=>{
+router.post("/signin", (req, res) => {
   User.findOne({
-  where:{
-   username:req.body.username
-  }
-  }).then(userData => {
-   if (!userData){
-       return res.status(401).json({msg:"Incorrect email or password."})
-   } else {
-       if (bcrypt.compareSync(req.body.password, userData.password)){
-           req.session.userId = userData.id;
-           req.session.username = userData.username;
-           return res.json(userData)
-       } else {
-           return res.status(401).json({msg:"Incorrect email or password."})
-       }
-   }
-  }).catch(err=>{
-   console.log(err);
-   res.status(500).json({msg:"Gosh dangit!",err})
+    where: {
+      username: req.body.username,
+    },
   })
+    .then((userData) => {
+      if (!userData) {
+        return res.status(401).json({ msg: "Incorrect email or password." });
+      } else {
+        if (bcrypt.compareSync(req.body.password, userData.password)) {
+          req.session.userId = userData.id;
+          req.session.username = userData.username;
+
+          return res.json(userData);
+        } else {
+          return res.status(401).json({ msg: "Incorrect email or password." });
+        }
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ msg: "Gosh dangit!", err });
+    });
 });
 
-router.get("/logout",(req,res)=>{
+router.get("/logout", (req, res) => {
   req.session.destroy();
-  res.send("Logged Out")
-})
+  res.send("Logged Out");
+});
 module.exports = router;
