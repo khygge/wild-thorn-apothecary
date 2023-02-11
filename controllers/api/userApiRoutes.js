@@ -4,6 +4,7 @@ const { User, Plant, Health } = require("../../models");
 const { Op } = require("sequelize");
 const bcrypt = require("bcrypt");
 
+// Get all users from api/users
 router.get("/", async (req, res) => {
   try {
     const findUsers = await User.findAll({
@@ -16,6 +17,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Get one user from /api/users/:userid
 router.get("/:userid", async (req, res) => {
   try {
     const findOneUser = await User.findByPk(req.params.userid, {
@@ -28,6 +30,7 @@ router.get("/:userid", async (req, res) => {
   }
 });
 
+// Post request to create a new user to api/users
 router.post("/", async (req, res) => {
   try {
     const createNewuser = await User.create({
@@ -46,6 +49,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Add a plant to a user, this route is /api/users/:userid/:plantid
 router.post("/:userid/:plantid", async (req, res) => {
   try {
     const findOneUser = await User.findByPk(req.params.userid);
@@ -67,6 +71,7 @@ router.post("/:userid/:plantid", async (req, res) => {
   }
 });
 
+// /api/users/signin route makes the req.session include user information when passwords match.
 router.post("/signin", (req, res) => {
   User.findOne({
     where: {
@@ -93,6 +98,7 @@ router.post("/signin", (req, res) => {
     });
 });
 
+// Destroys current session.
 router.get("/logout", (req, res) => {
   req.session.destroy();
   res.send("Logged Out");
