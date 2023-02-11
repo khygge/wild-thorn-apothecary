@@ -4,7 +4,7 @@ const { User, Plant, Health } = require("../../models");
 
 router.get("/", async (req, res) => {
   try {
-    const allPlants = await Plant.findAll();
+    const allPlants = await Plant.findAll({ include: [Health] });
     res.json(allPlants);
   } catch (err) {
     console.log(err);
