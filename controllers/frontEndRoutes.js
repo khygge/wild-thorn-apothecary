@@ -32,18 +32,19 @@ let mailFunction = async () => {
     service: "gmail",
     auth: {
       user: "b.wildthorn@gmail.com", // generated ethereal user
-      pass: "ozvcfiuztyuzzrok",
+      pass: process.env.EMAIL_SECRET,
       tls: {
         rejectUnAuthorized: true,
       }, // generated ethereal password
     },
   });
-  // b.wildthorn@gmail.com
-  // BingusOurB0ngus!
+
+  // TODO: Create functionality to pass in user email and username.
+  // TODO: Create this in a route to ba able to call for a specific user, find that user, and then make a list of the plants they want. Format it with html, then, add it to the body of the email.
   // send mail with defined transport object
   let info = await transporter.sendMail({
     from: '"Wild Thorn No-reply" <b.wildthorn@yahoo.com>', // sender address
-    to: "veloswim@gmail.com", // list of receivers
+    to: `USER EMAIL HERE`, // list of receivers
     subject: "Hello ✔", // Subject line
     text: "Hello world?", // plain text body
     html: "<b>Hello world?</b>", // html body
