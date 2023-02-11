@@ -1,4 +1,4 @@
-document.querySelector("#signUpForm").addEventListener("submit",e=>{
+document.querySelector("#sign-up-form").addEventListener("submit",e => {
     e.preventDefault();
     const signupObj = {
         user_email:document.querySelector("#signUpEmail").value,
@@ -6,20 +6,17 @@ document.querySelector("#signUpForm").addEventListener("submit",e=>{
         password:document.querySelector("#signUpPassword").value
     }
     console.log(signupObj)
-
-    // TODO: add route for creating a new user
-    fetch("",{
+    fetch("/api/users",{
         method:"POST",
         body:JSON.stringify(signupObj),
         headers:{
             "Content-Type":"application/json"
         }
     }).then(res=>{
-        // TODO: where to redirect?
         if(res.ok){
-           location.href=""
+           location.href="/userplants"
         } else {
             console.log(err)
         }
     })
-})
+});
