@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 const { User, Plant, Health } = require("../models");
 
 router.get("/", (req, res) => {
-  res.render("userplants");
+  res.render("home");
 });
 
 router.get("/garden", (req, res) => {
