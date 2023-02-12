@@ -75,7 +75,7 @@ let mailFunction = async (email, userInfo) => {
 };
 
 router.get("/mail", async (req, res) => {
-  const findOneUser = await User.findByPk(req.params.userid, {
+  const findOneUser = await User.findByPk(req.session.userId, {
     include: {
       model: Plant,
       include: [Health],
