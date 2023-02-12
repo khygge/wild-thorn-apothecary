@@ -45,7 +45,8 @@ header {
     color: var(--text);
 }
 
-.header-button {
+.header-button,
+.search-form button {
     font-family: 'Fredericka the Great', cursive;
     font-size: 24px;
     color: var(--text);
@@ -311,7 +312,6 @@ input {
     flex-direction: column;
     background: var(--background);
     border: 8px solid var(--header);
-    /* background-image: url(/images/paper-bg.jpg); */
     width: 95vw;
     height: auto;
     margin: 20px;
@@ -354,3 +354,32 @@ input {
     align-items: center;
     justify-content: center;
 }
+
+.search,
+.search-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form input {
+    height: 40px;
+    margin: 10px;
+}
+
+.search-form button:hover {
+    background-color: #a7987e90;
+    /* background-color: #8cb4a2a4; */
+}
+
+.plant-search {
+    background: var(--cards);
+    width: 95vw;
+}
+
+.no-plants {
+    font-family: 'Fredericka the Great', cursive;
+    margin: 200px 90px;
+    text-align: center;
+}
+

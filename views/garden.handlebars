@@ -12,16 +12,33 @@
         <div class="plant-box">
             <div class="garden">
                 <div class="plants">
+                    {{!-- {{> no-plants}} --}}
                     {{> chamomile}}
+                    {{> calendula}}
+                    {{> english-lavender}}
+                    {{> holy-basil}}
+                    {{> nettle}}
+                    {{> peppermint}}
+                    {{> yarrow}}
+                    {{> sage}}
+                    {{> echinacea}}
+                    {{> hawthorn}}
                 </div>
             </div>
         </div>
 
-        <div class="search">
-            <form>
-                <input type="text" placeholder="Enter plant name...">
-                <button type="submit"></button>
-            </form>
+        <div class="search-card">
+            <div class="plant-search">
+                <div class="search">
+                    <form class="search-form">
+                        <input type="text" placeholder="Enter plant name...">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="search-result">
+
+                </div>
+            </div>      
         </div>
 
         <button class="email-me">Email Me</button>
