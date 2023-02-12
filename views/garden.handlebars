@@ -14,34 +14,112 @@
                 <div class="plants">
                     {{!-- {{> no-plants}} --}}
                     <!--placeholder partial tags, remove for final product-->
-                    {{> chamomile}}
-                    {{> calendula}}
-                    {{> english-lavender}}
-                    {{> holy-basil}}
-                    {{> nettle}}
-                    {{> peppermint}}
-                    {{> yarrow}}
-                    {{> sage}}
-                    {{> echinacea}}
-                    {{> hawthorn}}
-                    {{> ginger}}
-                    {{> turmeric}}
+                    {{#each Plants}}
+                        {{#unless plant_name}}
+                            {{> no-plants}}
+                        {{/unless}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Chamomile")}}
+                            {{> chamomile}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Calendula")}}
+                            {{> calendula}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "English Lavender")}}
+                            {{> english-lavender}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Holy Basil")}}
+                            {{> holy-basil}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Nettle")}}
+                            {{> nettle}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Peppermint")}}
+                            {{> peppermint}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Yarrow")}}
+                            {{> yarrow}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Sage")}}
+                            {{> sage}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Echinacea")}}
+                            {{> echinacea}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Hawthorn")}}
+                            {{> hawthorn}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Ginger")}}
+                            {{> ginger}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Turmeric")}}
+                            {{> tumeric}}
+                        {{/if}}
+                    {{/each}}
                 </div>
             </div>
         </div>
 
-        <div class="search">
-            <form id="searchForm">
-                <input type="text" id='searchInput' placeholder="Enter plant name...">
-                <button type="submit"></button>
-            </form>
+        <div class="search-card">
+            <div class="plant-search">
+                <div class="search">
+                    <form id="searchForm" class="search-form">
+                        <input type="text" id='searchInput' placeholder="Enter plant name...">
+                        <button type="submit">Search</button>
+                    </form>
+                    <button class="email-me" id="emailMeBtn">Email Me</button>
+                </div>
+
+                <div class="search-result">
+                    <div class="left-card">
+                        <h2>Chamomile</h2>
+                        <img class="search-img" src="/images/chamomile.jpg">
+                    </div>
+                    <div class="right-card">
+                        <p class="search-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa cumque enim assumenda architecto perferendis veniam repellat provident? Ut minus praesentium, consequatur dicta perferendis aliquam libero.</p>
+                        <div class="ailment-list">
+                            <p class="ailment">Ailments:</p>
+                            <ul>
+                                <li>Ailment</li>
+                                <li>Ailment</li>
+                                <li>Ailment</li>
+                                <li>Ailment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="feature-button">Add to Garden</button>
+            </div>      
         </div>
 
     </main>
 
     <footer>
         <div class="bottom-buttons">
-            <button type="button" class="footer-button" onclick="window.location.href='/';">Home</button>
+            <button type="button" class="footer-button" onclick="window.location.href='/userplants';">Home</button>
             <button type="button" class="footer-button">About Us</button>
             <button type="button" class="footer-button" onclick="window.location.href='/ourplants';">Our Plants</button>
             <a href="mailto: b.wildthorn@gmail.com"><button type="button" class="footer-button">Contact Us</button></a>
