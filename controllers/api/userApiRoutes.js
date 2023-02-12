@@ -100,8 +100,9 @@ router.post("/signin", (req, res) => {
 });
 
 // Destroys current session.
-router.get("/logout", (req, res) => {
+router.delete("/logout", (req, res) => {
   req.session.destroy();
   res.send("Logged Out");
 });
+
 module.exports = router;
