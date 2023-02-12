@@ -134,7 +134,7 @@ const seed = async () => {
     for (let i = 0; i < user.length; i++) {
       await user[i].addPlants([
         Math.floor(Math.random() * plant.length + 1),
-        Math.floor(Math.random() * plant.length + 1),
+        // Math.floor(Math.random() * plant.length + 1),
       ]);
     }
   };
@@ -142,7 +142,7 @@ const seed = async () => {
     for (let i = 0; i < plant.length; i++) {
       await plant[i].addHealth([
         Math.floor(Math.random() * health.length + 1),
-        Math.floor(Math.random() * health.length + 1),
+        // Math.floor(Math.random() * health.length + 1),
       ]);
     }
   };
