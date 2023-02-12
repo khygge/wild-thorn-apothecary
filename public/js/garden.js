@@ -2,6 +2,8 @@ const searchedTitle = document.querySelector("#plantTitle");
 const searchedDescription = document.querySelector("#plantDescription");
 const searchedHealthList = document.querySelector("#healthList");
 const searchedImage = document.querySelector("#plantImg");
+const searchedClimate = document.querySelector("#plantClimate");
+const searchedType = document.querySelector("#plantType");
 
 document.getElementById("signout-btn").addEventListener("click", (e) => {
   e.preventDefault();
@@ -37,12 +39,8 @@ document.getElementById("searchForm").addEventListener("submit", async (e) => {
           fetch(`/api/plants/${data[i].id}`)
             .then((res) => res.json())
             .then((matchingPlant) => {
-              appendSearchedPlant(matchingPlant);
+              return appendSearchedPlant(matchingPlant);
             });
-        } else {
-          console.log(
-            `searchedPlant=${searchedPlant} but other plant = ${data[i].plant_name}`
-          );
         }
       }
     });
@@ -67,16 +65,22 @@ document.querySelector("#emailMeBtn").addEventListener("click", (e) => {
 });
 
 const appendSearchedPlant = async (plantObj) => {
-  console.log(plantObj);
+  // Get necessary keys from plant obj to refer to in this function
   let title = plantObj.plant_name;
   let imgSrc = plantObj.plant_name.toLowerCase();
-  let description = `Preferred Climate: ${plantObj.climate}, Type: ${plantObj.type}`;
+  let climate = plantObj.climate;
+  let type = plantObj.type;
   let healthArr = plantObj.Health;
+  // Use this to set image sources to have - instead of spaces
+  let imgArr = imgSrc.split(" ");
+  // Append list elements to health list
+  for (let i = 0; i < healthArr.length; i++) {
+    let newLi = document.createElement("li");
+    newLi.textContent = healthArr[i].benefits;
+    searchedHealthList.appendChild(newLi);
+  }
   searchedTitle.textContent = title;
-  searchedDescription.textContent = description;
-  searchedImage.setAttribute("src", `/images/${imgSrc}.jpg`);
-
-  console.log(title + " title");
-  console.log(description + " desc");
-  console.log(healthArr);
+  searchedImage.setAttribute("src", `/images/${imgArr.join("-")}.jpg`);
+  searchedClimate.textContent = `Climate: ${climate}`;
+  searchedType.textContent = `Type: ${type}`;
 };
