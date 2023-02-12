@@ -15,10 +15,7 @@ router.get("/garden",(req,res)=>{
   User.findByPk(req.session.userId,{
       include:[Plant]
   }).then(userdata => {
-      console.log(userdata)
       const hbsData = userdata.toJSON();
-      console.log('==============================')
-      console.log(hbsData)
       res.render("garden", hbsData)
   })
 });
