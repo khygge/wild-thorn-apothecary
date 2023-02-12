@@ -45,7 +45,9 @@ header {
     color: var(--text);
 }
 
-.header-button {
+.header-button,
+.search-form button,
+.email-me {
     font-family: 'Fredericka the Great', cursive;
     font-size: 24px;
     color: var(--text);
@@ -144,7 +146,8 @@ header {
     width: 75vw;
 }
 
-.item-card h2 {
+.item-card h2,
+.left-card h2 {
     font-size: 45px;
     font-family: 'Dawning of a New Day', cursive;
     line-height: 20px;
@@ -156,7 +159,8 @@ header {
 }
 
 .feature-item img,
-.user-item img {
+.user-item img,
+.search-img {
     width: 273px;
     height: 273px;
     border-radius: 100%;
@@ -203,6 +207,7 @@ header {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
     margin: 40px;
 }
 
@@ -299,22 +304,14 @@ input {
 
 /* ========GARDEN PAGE======== */
 
-
-.plant-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .garden {
     display: flex;
     flex-direction: column;
     background: var(--background);
     border: 8px solid var(--header);
-    /* background-image: url(/images/paper-bg.jpg); */
     width: 95vw;
     height: auto;
-    margin: 20px;
+    margin: 30px;
 }
 
 .plants {
@@ -353,4 +350,72 @@ input {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.search,
+.search-card,
+.search-result,
+.plant-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form input {
+    height: 45px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.search-form button {
+    padding: 10px;
+}
+
+.search-form button:hover,
+.email-me:hover {
+    background-color: #a7987e90;
+}
+
+.plant-search {
+    background: var(--cards);
+    width: 95vw;
+}
+
+.no-plants {
+    font-family: 'Fredericka the Great', cursive;
+    margin: 200px 90px;
+    text-align: center;
+}
+
+.email-me {
+    margin-left: 30px;
+    margin: 10px;
+}
+
+.search-result {
+    padding: 20px;
+}
+
+.left-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.right-card li,
+.search-description {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20px;
+}
+
+.ailment {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 30px;
+}
+
+.right-card {
+    display: flex;
+    flex-direction: row;
 }
