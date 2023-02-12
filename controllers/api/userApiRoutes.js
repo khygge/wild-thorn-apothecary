@@ -85,7 +85,8 @@ router.post("/signin", (req, res) => {
         if (bcrypt.compareSync(req.body.password, userData.password)) {
           req.session.userId = userData.id;
           req.session.username = userData.username;
-
+          req.session.user_email = userData.user_email;
+          req.session.loggedIn = true;
           return res.json(userData);
         } else {
           return res.status(401).json({ msg: "Incorrect email or password." });
@@ -99,8 +100,9 @@ router.post("/signin", (req, res) => {
 });
 
 // Destroys current session.
-router.get("/logout", (req, res) => {
+router.delete("/logout", (req, res) => {
   req.session.destroy();
   res.send("Logged Out");
 });
+
 module.exports = router;
