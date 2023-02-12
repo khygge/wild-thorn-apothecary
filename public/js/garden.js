@@ -34,7 +34,7 @@ document.getElementById("searchForm").addEventListener("submit", async (e) => {
             headers: {
               "Content-Type": "application/json",
             },
-          }).then((res) => res.json().then((data) => console.log(data)));
+          }).then((res) => res.json().then((data) => location.reload()));
         } else {
           console.log(
             `searchedPlant=${searchedPlant} but other plant = ${data[i].plant_name}`
