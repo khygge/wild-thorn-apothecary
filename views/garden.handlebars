@@ -30,11 +30,36 @@
             </div>
         </div>
 
-        <div class="search">
-            <form id="searchForm">
-                <input type="text" id='searchInput' placeholder="Enter plant name...">
-                <button type="submit"></button>
-            </form>
+        <div class="search-card">
+            <div class="plant-search">
+                <div class="search">
+                    <form id="searchForm" class="search-form">
+                        <input type="text" id='searchInput' placeholder="Enter plant name...">
+                        <button type="submit">Search</button>
+                    </form>
+                    <button class="email-me" id="emailMeBtn">Email Me</button>
+                </div>
+
+                <div class="search-result">
+                    <div class="left-card">
+                        <h2>Chamomile</h2>
+                        <img class="search-img" src="/images/chamomile.jpg">
+                    </div>
+                    <div class="right-card">
+                        <p class="search-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa cumque enim assumenda architecto perferendis veniam repellat provident? Ut minus praesentium, consequatur dicta perferendis aliquam libero.</p>
+                        <div class="ailment-list">
+                            <p class="ailment">Ailments:</p>
+                            <ul>
+                                <li>Ailment</li>
+                                <li>Ailment</li>
+                                <li>Ailment</li>
+                                <li>Ailment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="feature-button">Add to Garden</button>
+            </div>      
         </div>
 
     </main>
