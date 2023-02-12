@@ -49,10 +49,11 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Add a plant to a user, this route is /api/users/:userid/:plantid
-router.post("/:userid/:plantid", async (req, res) => {
+// Add a plant to a user, this route is /api/users/addplant/:plantid
+router.post("/addplant/:plantid", async (req, res) => {
   try {
-    const findOneUser = await User.findByPk(req.params.userid);
+    const sessionUserId = req.session.userId;
+    const findOneUser = await User.findByPk(sessionUserId);
     if (!findOneUser) {
       res.status(404).json({ msg: "no such user" });
     } else {
