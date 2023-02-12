@@ -14,18 +14,71 @@
                 <div class="plants">
                     {{!-- {{> no-plants}} --}}
                     <!--placeholder partial tags, remove for final product-->
-                    {{> chamomile}}
-                    {{> calendula}}
-                    {{> english-lavender}}
-                    {{> holy-basil}}
-                    {{> nettle}}
-                    {{> peppermint}}
-                    {{> yarrow}}
-                    {{> sage}}
-                    {{> echinacea}}
-                    {{> hawthorn}}
-                    {{> ginger}}
-                    {{> turmeric}}
+                    {{#each Plants}}
+                        {{#unless plant_name}}
+                            {{> no-plants}}
+                        {{/unless}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Chamomile")}}
+                            {{> chamomile}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Calendula")}}
+                            {{> calendula}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "English Lavender")}}
+                            {{> english-lavender}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Holy Basil")}}
+                            {{> holy-basil}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Nettle")}}
+                            {{> nettle}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Peppermint")}}
+                            {{> peppermint}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Yarrow")}}
+                            {{> yarrow}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Sage")}}
+                            {{> sage}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Echinacea")}}
+                            {{> echinacea}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Hawthorn")}}
+                            {{> hawthorn}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Ginger")}}
+                            {{> ginger}}
+                        {{/if}}
+                    {{/each}}
+                    {{#each Plants}}
+                        {{#if (eq plant_name "Turmeric")}}
+                            {{> tumeric}}
+                        {{/if}}
+                    {{/each}}
                 </div>
             </div>
         </div>

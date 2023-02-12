@@ -16,6 +16,7 @@ router.get("/garden", (req, res) => {
     include: [Plant],
   }).then((userdata) => {
     const hbsData = userdata.toJSON();
+    console.log(hbsData);
     res.render("garden", hbsData);
   });
 });
