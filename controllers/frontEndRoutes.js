@@ -16,6 +16,7 @@ router.get("/garden", (req, res) => {
     include: [Plant],
   }).then((userdata) => {
     const hbsData = userdata.toJSON();
+    console.log(hbsData);
     res.render("garden", hbsData);
   });
 });
@@ -28,8 +29,14 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/userplants", (req, res) => {
-  res.render("userplants");
+router.get("/userplants",(req,res)=>{
+  User.findByPk(req.session.userId, {
+      include:[Plant]
+  }).then(userdata => {
+      const hbsData = userdata.toJSON();
+      console.log(hbsData);
+      res.render("userplants", hbsData)
+  })
 });
 
 router.get("/ourplants", (req, res) => {

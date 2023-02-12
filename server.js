@@ -37,6 +37,13 @@ const hbs = exphbs.create({});
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
+hbs.handlebars.registerHelper("eq", function () {
+  const args = Array.prototype.slice.call(arguments, 0, -1);
+  return args.every(function (expression) {
+    return args[0] === expression;
+  });
+});
+
 app.use(allRoutes);
 
 sequelize.sync({ force: false }).then(function () {
