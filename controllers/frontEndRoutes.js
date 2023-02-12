@@ -7,8 +7,17 @@ router.get("/", (req, res) => {
   res.render("home");
 });
 
-router.get("/garden", (req, res) => {
-  res.render("garden");
+router.get("/garden",(req,res)=>{
+  console.log(req.session)
+  if(!req.session.userId){
+      return res.redirect("/signin")
+  }
+  User.findByPk(req.session.userId,{
+      include:[Plant]
+  }).then(userdata => {
+      const hbsData = userdata.toJSON();
+      res.render("garden", hbsData)
+  })
 });
 
 router.get("/signin", (req, res) => {
