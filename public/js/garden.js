@@ -4,6 +4,8 @@ const searchedHealthList = document.querySelector("#healthList");
 const searchedImage = document.querySelector("#plantImg");
 const searchedClimate = document.querySelector("#plantClimate");
 const searchedType = document.querySelector("#plantType");
+// Use variable below to get a plant id to call the api to add a plant easier
+let plantIdFromSearch;
 
 document.getElementById("signout-btn").addEventListener("click", (e) => {
   e.preventDefault();
@@ -36,6 +38,7 @@ document.getElementById("searchForm").addEventListener("submit", async (e) => {
       console.log(data);
       for (let i = 0; i < data.length; i++) {
         if (searchedPlant == data[i].plant_name.toLowerCase()) {
+          plantIdFromSearch = data[i].id;
           fetch(`/api/plants/${data[i].id}`)
             .then((res) => res.json())
             .then((matchingPlant) => {
@@ -47,12 +50,15 @@ document.getElementById("searchForm").addEventListener("submit", async (e) => {
 });
 
 // ! Use this fetch to add a plant to a user
-// fetch(`/api/users/addplant/${data[i].id}`, {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-// }).then((res) => res.json().then((data) => location.reload()));
+document.querySelector("#addToGarden").addEventListener("click", (e) => {
+  e.preventDefault();
+  fetch(`/api/users/addplant/${plantIdFromSearch}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json().then((data) => location.reload()));
+});
 
 document.querySelector("#emailMeBtn").addEventListener("click", (e) => {
   e.preventDefault();
