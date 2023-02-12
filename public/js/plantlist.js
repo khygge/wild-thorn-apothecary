@@ -5,7 +5,10 @@ function plantdis(){
         console.log(data);
         for (let i = 0; i < data.length; i++) {
             const plant = data[i];
-            const plantName = plant.plant_name.toLowerCase()
+            let plantName = plant.plant_name.toLowerCase()
+            if (plantName.includes(" ")) {
+                plantName = plantName.split(" ").join("-");
+              }
             const plantHealth = plant.Health
             const appendPlantLocation = document.querySelector("#appendlist")
             const createPlantImg = document.createElement('img');
@@ -14,7 +17,8 @@ function plantdis(){
             const createPlantH2 = document.createElement('h2');
             const createPlantP = document.createElement('p');
             const createPlantButton = document.createElement('button');
-            
+           
+
             if(i%2 === 0){
                 createPlantImg.setAttribute('src', `/images/${plantName}.jpg`)
                 
@@ -27,10 +31,19 @@ function plantdis(){
                 createPlantDiv.setAttribute('id', `appendinfo${i}`)
                 
                 createPlantH2.setAttribute('class', 'item-name')
-                createPlantH2.textContent = `${plantName}`;
-                
-                createPlantP.textContent = `${plantHealth}`;
-                
+                createPlantH2.textContent = `${plant.plant_name}`;
+
+                let firstBenefit = true;
+                plantHealth.forEach(function(plants) {
+                  console.log(plants.benefits);
+                  if (firstBenefit) {
+                    createPlantP.textContent += `This plant is most commonly used for : ${plants.benefits}`;
+                    firstBenefit = false;
+                  } else {
+                    createPlantP.textContent += `, ${plants.benefits}`;
+                  }
+                });
+                                
                 createPlantButton.setAttribute('type', 'button')
                 createPlantButton.setAttribute('class', 'feature-button')
                 createPlantButton.setAttribute('id', 'addGardenBtn')
@@ -57,9 +70,18 @@ function plantdis(){
                 createPlantDiv.setAttribute('id', `appendinfo${i}`)
                 
                 createPlantH2.setAttribute('class', 'item-name')
-                
-                // createPlantP.textContent = `${plantHealth}`;
-                
+                createPlantH2.textContent = `${plant.plant_name}`;
+
+                let firstBenefit = true;
+                plantHealth.forEach(function(plants) {
+                  console.log(plants.benefits);
+                  if (firstBenefit) {
+                    createPlantP.textContent += `This plant is most commonly used for : ${plants.benefits}`;
+                    firstBenefit = false;
+                  } else {
+                    createPlantP.textContent += `, ${plants.benefits}`;
+                  }
+                });            
                 createPlantButton.setAttribute('type', 'button')
                 createPlantButton.setAttribute('class', 'feature-button')
                 createPlantButton.setAttribute('id', 'addGardenBtn')
