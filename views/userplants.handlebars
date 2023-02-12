@@ -73,8 +73,8 @@
                        Sage is part of the mint family. Unlike it's cooling relative, Sage has a warming and drying effect that incrases circulation in key areas of the body such as 
                        the digestive system and respiratory tract. This little plant can help with stomach aches and colds.</p>
                        <div class="stats">
-                        <p>Climate: Warm</p>
-                        <p>Type: Plant</p>
+                        <p>Climate: {{climate}}</p>
+                        <p>Type: {{type}}</p>
                         <div class="ailment-list">
                             <p class="ailment">Ailments:</p>
                             <ul>
@@ -106,10 +106,9 @@
                         <div class="ailment-list">
                             <p class="ailment">Ailments:</p>
                             <ul>
-                                <li>Ailment</li>
-                                <li>Ailment</li>
-                                <li>Ailment</li>
-                                <li>Ailment</li>
+                                {{#each Plants.benefits}}
+                                <li>{{benefit}}</li>
+                                {{/each}}
                             </ul>
                         </div>
                     </div>
