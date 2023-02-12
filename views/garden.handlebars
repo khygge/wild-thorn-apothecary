@@ -12,27 +12,39 @@
         <div class="plant-box">
             <div class="garden">
                 <div class="plants">
+                    {{!-- {{> no-plants}} --}}
+                    <!--placeholder partial tags, remove for final product-->
                     {{> chamomile}}
+                    {{> calendula}}
+                    {{> english-lavender}}
+                    {{> holy-basil}}
+                    {{> nettle}}
+                    {{> peppermint}}
+                    {{> yarrow}}
+                    {{> sage}}
+                    {{> echinacea}}
+                    {{> hawthorn}}
+                    {{> ginger}}
+                    {{> turmeric}}
                 </div>
             </div>
         </div>
 
         <div class="search">
-            <form>
-                <input type="text" placeholder="Enter plant name...">
+            <form id="searchForm">
+                <input type="text" id='searchInput' placeholder="Enter plant name...">
                 <button type="submit"></button>
             </form>
         </div>
 
-        <button class="email-me">Email Me</button>
     </main>
 
     <footer>
         <div class="bottom-buttons">
-            <button type="button" class="footer-button">Home</button>
+            <button type="button" class="footer-button" onclick="window.location.href='/';">Home</button>
             <button type="button" class="footer-button">About Us</button>
-            <button type="button" class="footer-button">Our Plants</button>
-            <button type="button" class="footer-button">Contact Us</button>
+            <button type="button" class="footer-button" onclick="window.location.href='/ourplants';">Our Plants</button>
+            <a href="mailto: b.wildthorn@gmail.com"><button type="button" class="footer-button">Contact Us</button></a>
         </div>
     </footer>
 
