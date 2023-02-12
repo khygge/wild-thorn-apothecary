@@ -5,7 +5,7 @@ function plantdis(){
         console.log(data);
         for (let i = 0; i < data.length; i++) {
             const plant = data[i];
-            const plantName = plant.plant_name.toLowerCase()
+            let plantName = plant.plant_name.toLowerCase()
             if (plantName.includes(" ")) {
                 plantName = plantName.split(" ").join("-");
               }
