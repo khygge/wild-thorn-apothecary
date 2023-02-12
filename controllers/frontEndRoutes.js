@@ -27,6 +27,10 @@ router.get("/ourplants", (req, res) => {
   res.render("plantslist");
 });
 
+router.get("/sessions", (req, res) => {
+  res.json(req.session);
+});
+
 let mailFunction = async () => {
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
