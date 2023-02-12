@@ -140,13 +140,13 @@ const seed = async () => {
   ]);
 
   const seedPlantsToUsers = async () => {
-    for (let i = 0; i < user.length; i++) {
-      await user[i].addPlants([
-        Math.floor(Math.random() * plant.length + 1),
-        // Math.floor(Math.random() * plant.length + 1),
-      ]);
-    }
+    await user[0].addPlants([2, 5, 6, 10]);
+    await user[1].addPlants([2, 4, 9]);
+    await user[2].addPlants([1, 6, 8, 12]);
+    await user[3].addPlants([3, 7, 11]);
   };
+
+
   const seedHealthToPlants = async () => {
     await plant[0].addHealth([2, 7, 11])
     await plant[1].addHealth([2, 6, 8, 9])
