@@ -138,6 +138,7 @@ header {
     text-decoration: none;
     align-items: center;
     justify-content: center;
+    margin: 20px;
 }
 
 .item-card {
@@ -361,6 +362,10 @@ input {
     align-items: center;
 }
 
+.search {
+    justify-content: space-evenly;
+}
+
 .search-form input {
     height: 45px;
     margin: 10px;
@@ -411,11 +416,30 @@ input {
 }
 
 .ailment {
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .right-card {
     display: flex;
+    flex-direction: column;
+}
+
+.ailment-list {
+    display: flex;
+    justify-content: center;
     flex-direction: row;
+}
+
+.in-garden {
+    font-size: 30px;
+    width: 50vw;
+    align-self: center;
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20px;
 }
