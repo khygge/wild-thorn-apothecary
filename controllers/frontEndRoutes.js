@@ -7,17 +7,17 @@ router.get("/", (req, res) => {
   res.render("home");
 });
 
-router.get("/garden",(req,res)=>{
-  console.log(req.session)
-  if(!req.session.userId){
-      return res.redirect("/signin")
+router.get("/garden", (req, res) => {
+  console.log(req.session);
+  if (!req.session.userId) {
+    return res.redirect("/signin");
   }
-  User.findByPk(req.session.userId,{
-      include:[Plant]
-  }).then(userdata => {
-      const hbsData = userdata.toJSON();
-      res.render("garden", hbsData)
-  })
+  User.findByPk(req.session.userId, {
+    include: [Plant],
+  }).then((userdata) => {
+    const hbsData = userdata.toJSON();
+    res.render("garden", hbsData);
+  });
 });
 
 router.get("/signin", (req, res) => {
@@ -34,6 +34,10 @@ router.get("/userplants", (req, res) => {
 
 router.get("/ourplants", (req, res) => {
   res.render("plantslist");
+});
+
+router.get("/sessions", (req, res) => {
+  res.json(req.session);
 });
 
 let mailFunction = async () => {
