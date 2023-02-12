@@ -42,7 +42,10 @@ const seed = async () => {
       benefits: "Anti-Inflammatory",
     },
     {
-      benefits: "Sleep",
+      benefits: "Cardiovascular Support",
+    },
+    {
+      benefits: "Restful Sleep",
     },
     {
       benefits: "Stress Relief",
@@ -54,7 +57,13 @@ const seed = async () => {
       benefits: "Anti-Anxiety",
     },
     {
+      benefits: "Relaxation",
+    },
+    {
       benefits: "Antiviral",
+    },
+    {
+      benefits: "Antibacterial"
     },
     {
       benefits: "Allergy Relief",
@@ -139,12 +148,18 @@ const seed = async () => {
     }
   };
   const seedHealthToPlants = async () => {
-    for (let i = 0; i < plant.length; i++) {
-      await plant[i].addHealth([
-        Math.floor(Math.random() * health.length + 1),
-        // Math.floor(Math.random() * health.length + 1),
-      ]);
-    }
+    await plant[0].addHealth([2, 7, 11])
+    await plant[1].addHealth([2, 6, 8, 9])
+    await plant[2].addHealth([1, 2])
+    await plant[3].addHealth([6, 8])
+    await plant[4].addHealth([2, 5, 6, 8, 9])
+    await plant[5].addHealth([2, 4, 7])
+    await plant[6].addHealth([7, 11])
+    await plant[7].addHealth([6, 7, 8, 11])
+    await plant[8].addHealth([3, 7, 10, 11, 12])
+    await plant[9].addHealth([4, 7, 12])
+    await plant[10].addHealth([2, 3, 7, 13])
+    await plant[11].addHealth([2, 3, 11, 14])
   };
 
   await seedPlantsToUsers();
