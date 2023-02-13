@@ -31,7 +31,12 @@ router.get("/signup", (req, res) => {
 
 router.get("/userplants", (req, res) => {
   User.findByPk(req.session.userId, {
-    include: [Plant],
+    include: {
+      model: Plant,
+      include: {
+        model: Health,
+      },
+    },
   }).then((userdata) => {
     const hbsData = userdata.toJSON();
     console.log(hbsData);
