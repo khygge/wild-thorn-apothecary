@@ -7,6 +7,7 @@ const searchedType = document.querySelector("#plantType");
 // Use variable below to get a plant id to call the api to add a plant easier
 let plantIdFromSearch;
 
+// Route to sign out
 document.getElementById("signout-btn").addEventListener("click", (e) => {
   e.preventDefault();
   fetch("/api/users/logout", {
@@ -23,6 +24,7 @@ document.getElementById("signout-btn").addEventListener("click", (e) => {
   });
 });
 
+// Route to search for a plant
 document.getElementById("searchForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   let searchedPlant = document.getElementById("searchInput").value;
@@ -60,6 +62,7 @@ document.querySelector("#addToGarden").addEventListener("click", (e) => {
   }).then((res) => res.json().then((data) => location.reload()));
 });
 
+// Route to send email with nodemailer
 document.querySelector("#emailMeBtn").addEventListener("click", (e) => {
   e.preventDefault();
   fetch("/mail", {
@@ -70,6 +73,7 @@ document.querySelector("#emailMeBtn").addEventListener("click", (e) => {
   }).then((res) => res.json().then((data) => location.reload()));
 });
 
+// Add plant to user garden
 const appendSearchedPlant = async (plantObj) => {
   // Get necessary keys from plant obj to refer to in this function
   let title = plantObj.plant_name;

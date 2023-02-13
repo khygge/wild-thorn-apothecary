@@ -1,8 +1,10 @@
+// Initialize sequelize and require global variables
 const Sequelize = require("sequelize");
 require("dotenv").config();
 
 let sequelize;
 
+// Set up sequelize connection
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {

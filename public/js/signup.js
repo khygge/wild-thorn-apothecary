@@ -1,3 +1,4 @@
+// Route to sign up on button click
 document.querySelector("#sign-up-form").addEventListener("submit",e => {
     e.preventDefault();
     const signupObj = {
