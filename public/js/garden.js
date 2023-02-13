@@ -57,7 +57,9 @@ document.querySelector("#addToGarden").addEventListener("click", (e) => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((res) => res.json().then((data) => location.reload()));
+  })
+    .then((res) => res.json())
+    .then((data) => location.reload());
 });
 
 document.querySelector("#emailMeBtn").addEventListener("click", (e) => {
@@ -67,7 +69,9 @@ document.querySelector("#emailMeBtn").addEventListener("click", (e) => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((res) => res.json().then((data) => location.reload()));
+  })
+    .then((res) => res.json())
+    .then((data) => location.reload());
 });
 
 const appendSearchedPlant = async (plantObj) => {

@@ -56,7 +56,6 @@ router.get("/about", (req, res) => {
   res.render("about");
 });
 
-let mailFunction = async () => {
 let mailFunction = async (email, userInfo) => {
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
@@ -118,5 +117,4 @@ router.get("/mail", async (req, res) => {
   await mailFunction(findOneUser.user_email, finalMessage);
   res.json(allUserPlants);
 });
-};
 module.exports = router;
