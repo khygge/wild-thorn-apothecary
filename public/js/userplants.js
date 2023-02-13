@@ -13,3 +13,4 @@ document.getElementById("sign-out-btn").addEventListener("click", (e) => {
     }
   });
 });
+

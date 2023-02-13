@@ -44,6 +44,10 @@ hbs.handlebars.registerHelper("eq", function () {
   });
 });
 
+hbs.handlebars.registerHelper('lowercase', function(str) {
+  return str.toLowerCase();
+});
+
 app.use(allRoutes);
 
 sequelize.sync({ force: false }).then(function () {
