@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 const { User, Plant, Health } = require("../models");
 
 router.get("/", (req, res) => {
-  res.render("userplants");
+  res.render("home");
 });
 
 router.get("/garden", (req, res) => {
@@ -45,6 +45,10 @@ router.get("/ourplants", (req, res) => {
 
 router.get("/sessions", (req, res) => {
   res.json(req.session);
+});
+
+router.get("/about", (req, res) => {
+  res.render("about");
 });
 
 let mailFunction = async () => {
