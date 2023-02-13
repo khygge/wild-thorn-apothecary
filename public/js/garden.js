@@ -80,6 +80,7 @@ const appendSearchedPlant = async (plantObj) => {
   // Use this to set image sources to have - instead of spaces
   let imgArr = imgSrc.split(" ");
   // Append list elements to health list
+  searchedHealthList.innerHTML = "";
   for (let i = 0; i < healthArr.length; i++) {
     let newLi = document.createElement("li");
     newLi.textContent = healthArr[i].benefits;
