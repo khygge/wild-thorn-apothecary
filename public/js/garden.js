@@ -59,7 +59,9 @@ document.querySelector("#addToGarden").addEventListener("click", (e) => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((res) => res.json().then((data) => location.reload()));
+  })
+    .then((res) => res.json())
+    .then((data) => location.reload());
 });
 
 // Route to send email with nodemailer
@@ -70,7 +72,9 @@ document.querySelector("#emailMeBtn").addEventListener("click", (e) => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((res) => res.json().then((data) => location.reload()));
+  })
+    .then((res) => res.json())
+    .then((data) => location.reload());
 });
 
 // Add plant to user garden
