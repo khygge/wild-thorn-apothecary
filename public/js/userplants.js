@@ -1,3 +1,4 @@
+// Route to sing out on button click
 document.getElementById("sign-out-btn").addEventListener("click", (e) => {
   e.preventDefault();
   fetch("/api/users/logout", {
@@ -13,3 +14,4 @@ document.getElementById("sign-out-btn").addEventListener("click", (e) => {
     }
   });
 });
+

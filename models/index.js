@@ -2,6 +2,7 @@ const User = require("./User");
 const Health = require("./Health");
 const Plant = require("./Plant");
 
+//Sequelize associations
 Health.belongsToMany(Plant, { through: "PlantHealth" });
 Plant.belongsToMany(Health, { through: "PlantHealth" });
 

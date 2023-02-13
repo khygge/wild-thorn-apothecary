@@ -3,10 +3,12 @@ const router = express.Router();
 const nodemailer = require("nodemailer");
 const { User, Plant, Health } = require("../models");
 
+// Homepage Render
 router.get("/", (req, res) => {
   res.render("home");
 });
 
+// User garden page. Will redirect to sign in if no current session is available.
 router.get("/garden", (req, res) => {
   console.log(req.session);
   if (!req.session.userId) {
@@ -21,14 +23,17 @@ router.get("/garden", (req, res) => {
   });
 });
 
+// Sign in page render
 router.get("/signin", (req, res) => {
   res.render("signin");
 });
 
+// Sign up page render
 router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+// Sign in home page, shows users plants
 router.get("/userplants", (req, res) => {
   User.findByPk(req.session.userId, {
     include: {
@@ -44,14 +49,17 @@ router.get("/userplants", (req, res) => {
   });
 });
 
+// Render list of shop plants
 router.get("/ourplants", (req, res) => {
   res.render("plantslist");
 });
 
+// View logged in user session
 router.get("/sessions", (req, res) => {
   res.json(req.session);
 });
 
+// Render about us page
 router.get("/about", (req, res) => {
   res.render("about");
 });
@@ -69,8 +77,6 @@ let mailFunction = async (email, userInfo) => {
     },
   });
 
-  // TODO: Create functionality to pass in user email and username.
-  // TODO: Create this in a route to ba able to call for a specific user, find that user, and then make a list of the plants they want. Format it with html, then, add it to the body of the email.
   // send mail with defined transport object
   let info = await transporter.sendMail({
     from: '"Wild Thorn No-reply" <b.wildthorn@yahoo.com>', // sender address
@@ -83,6 +89,7 @@ let mailFunction = async (email, userInfo) => {
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 };
 
+// Route for nodemailer to send email to user
 router.get("/mail", async (req, res) => {
   const findOneUser = await User.findByPk(req.session.userId, {
     include: {

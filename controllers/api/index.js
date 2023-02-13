@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+// Set up routes for models
 const userApiRoutes = require("./userApiRoutes");
 router.use("/users", userApiRoutes);
 
