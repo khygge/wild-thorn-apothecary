@@ -491,6 +491,10 @@ input {
         height: auto;
     }
 
+    header {
+        flex-direction: column;
+    }
+
     .header-button {
         margin: 10px;
         font-size: 18px;
@@ -538,5 +542,8 @@ input {
         width: 90%;
     }
 
-    
+    .search-result {
+        flex-direction: column;
+        justify-content: center;
+    }
 }
