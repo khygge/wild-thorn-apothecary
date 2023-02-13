@@ -34,6 +34,7 @@ body {
 header {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     background: var(--header);
     align-items: center;
     justify-content: space-around;
@@ -442,4 +443,39 @@ input {
     justify-content: space-evenly;
     font-family: 'Fredericka the Great', cursive;
     font-size: 20px;
+}
+
+.about-text {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    .logo-text {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .filigree {
+        width: 100px;
+        height: auto;
+    }
+
+    .header-button {
+        margin: 10px;
+        font-size: 18px;
+    }
+
+    .hero,
+    .stats {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        flex-direction: column-reverse;
+    }
+
+
 }
