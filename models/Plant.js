@@ -5,7 +5,6 @@ class Plant extends Model {}
 
 Plant.init(
   {
-    // add properites here, ex:
     plant_name: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -46,10 +46,6 @@ const seed = async () => {
     },
     {
       benefits: "Restful Sleep",
-      benefits: "Cardiovascular Support",
-    },
-    {
-      benefits: "Restful Sleep",
     },
     {
       benefits: "Stress Relief",
@@ -100,12 +96,12 @@ const seed = async () => {
       climate: "Partial Shade",
     },
     {
-      plant_name: "Holy Basil",
+      plant_name: "Basil",
       type: "Shrub",
       climate: "Full Sun",
     },
     {
-      plant_name: "English Lavender",
+      plant_name: "Lavender",
       type: "Shrub",
       climate: "Full Sun",
     },
