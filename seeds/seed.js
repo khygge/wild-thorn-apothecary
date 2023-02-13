@@ -46,6 +46,10 @@ const seed = async () => {
     },
     {
       benefits: "Restful Sleep",
+      benefits: "Cardiovascular Support",
+    },
+    {
+      benefits: "Restful Sleep",
     },
     {
       benefits: "Stress Relief",
@@ -55,6 +59,9 @@ const seed = async () => {
     },
     {
       benefits: "Anti-Anxiety",
+    },
+    {
+      benefits: "Relaxation",
     },
     {
       benefits: "Relaxation",
@@ -140,6 +147,10 @@ const seed = async () => {
   ]);
 
   const seedPlantsToUsers = async () => {
+    await user[0].addPlants([2, 5, 6, 10]);
+    await user[1].addPlants([2, 4, 9]);
+    await user[2].addPlants([1, 6, 8, 12]);
+    await user[3].addPlants([3, 7, 11]);
     await user[0].addPlants([2, 5, 6, 10]);
     await user[1].addPlants([2, 4, 9]);
     await user[2].addPlants([1, 6, 8, 12]);
