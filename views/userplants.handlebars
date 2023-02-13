@@ -106,10 +106,9 @@
                         <div class="ailment-list">
                             <p class="ailment">Ailments:</p>
                             <ul>
-                                <li>Ailment</li>
-                                <li>Ailment</li>
-                                <li>Ailment</li>
-                                <li>Ailment</li>
+                                {{#each Health}}
+                                    <li>{{benefits}}</li>
+                                {{/each}}
                             </ul>
                         </div>
                     </div>
