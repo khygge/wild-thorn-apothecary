@@ -44,6 +44,7 @@ hbs.handlebars.registerHelper("eq", function () {
   });
 });
 
+// Use Routes
 app.use(allRoutes);
 
 sequelize.sync({ force: false }).then(function () {

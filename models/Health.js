@@ -5,7 +5,6 @@ class Health extends Model {}
 
 Health.init(
   {
-    // add properites here, ex:
     benefits: {
       type: DataTypes.STRING,
       allowNull: false,
