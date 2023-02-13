@@ -1,0 +1,105 @@
+{{!-- Write all of the HTML for the page inside of this document, except for the <head> tag. This would contain everything inside of <main>. --}}
+    <header>
+        <button type="button" class="header-button" id="signin-btn" onclick="window.location.href='/signin';">Sign In</button>
+        <div class="logo">
+            <img class="filigree fill-left" src="/images/filigree-right.png">
+            <h1 class="logo-text">Wild Thorn Apothecary</h1>
+            <img class="filigree fill-right" src="/images/filigree-left.png">
+        </div>
+        <button type="button" class="header-button" id="sign-up-btn" onclick="window.location.href='/signup';">Sign Up</button>
+    </header>
+
+    <main>
+        <div class="hero">
+            <img src="/images/hero.jpg" class="poster">
+            <div class="side-content">
+                <div class="description">Welcome to Wild Thorn Apothecary! Here you can build your dream apothecary garden. Choose any plants from within our database based on the ailments they help, what climate is best for them, and what type of plant they are. In your garden, You can drag and drop plants into your garden to plan out your garden at home. Click the "Start a Garden" button below to start planting!</div>
+                <button type="button" class="hero-button" id="start-garden-btn" onclick="window.location.href='/signup';">Start a Garden</button>
+            </div>
+        </div>
+
+        <div class="featured">
+            <h1>Featured Plants</h1>
+            <a href="" class="feature-item">
+                <div class="item-card">
+                    <h2 class="item-name">Chamomile</h2>
+                    <p>Chamomile, while often thought of as a delicate flower, is one of the strongest herbs available! It has anti-spasmodic properties that allow the muscles 
+                       and nervous system to relax, promoting relaxation and restful sleep. These pretty flowers will look wonderful in any garden and offer benefits for the 
+                       whole family!</p>
+                       <div class="stats">
+                        <p>Climate: Partial Shade</p>
+                        <p>Type: Shrub</p>
+                        <div class="ailment-list">
+                            <p class="ailment">Ailments:</p>
+                            <ul>
+                                <li>Digestion Aid</li>
+                                <li>Stress Relief</li>
+                                <li>Anti-Anxiety</li>
+                                <li>Relaxation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="button" class="feature-button">Add to Garden</button>
+                </div>
+                <img src="/images/chamomile.jpg">
+            </a>
+
+            <a href="" class="feature-item">
+                <img src="/images/sage.jpg">
+                <div class="item-card">
+                    <h2 class="item-name">Sage</h2>
+                    <p>Many don't realize that culinary spices were added regularly to home cooking not only to improve taste, but to experience the benefits of these plants. 
+                       Sage is part of the mint family. Unlike it's cooling relative, Sage has a warming and drying effect that incrases circulation in key areas of the body such as 
+                       the digestive system and respiratory tract. This little plant can help with stomach aches and colds.</p>
+                       <div class="stats">
+                        <p>Type: Herb</p>
+                        <p>Climate: Partial Sun</p>
+                        <div class="ailment-list">
+                            <p class="ailment">Ailments:</p>
+                            <ul>
+                                <li>Circulation</li>
+                                <li>Antibacterial</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="button" class="feature-button">Add to Garden</button>
+                </div>
+            </a>
+
+            <a href="" class="feature-item">
+                <div class="item-card">
+                    <h2 class="item-name">Nettle</h2>
+                    <p>The superfood of herbs! Nettle is richly packed with vitamins and minerals that are great for your bones, teeth, and hair. Nettle also supports the kidneys and adrenal
+                        system which keeps fluid flowing and lessens histamine responses. Use this plant as a tea for for seasonal allergies and to supplement nutrition.
+                    </p>
+                    <div class="stats">
+                        <p>Type: Shrub</p>
+                        <p>Climate: Partial Shade</p>
+                        <div class="ailment-list">
+                            <p class="ailment">Ailments:</p>
+                            <ul>
+                                <li>Cardiovascular Support</li>
+                                <li>Circulation</li>
+                                <li>Allergy Relief</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="button" class="feature-button">Add to Garden</button>
+                </div>
+                <img src="/images/nettle.jpg">
+            </a>
+
+            <button type="button" class="all-button" onclick="window.location.href='/ourplants';">View All</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="bottom-buttons">
+            <button type="button" class="footer-button" onclick="window.location.href='/about';">About Us</button>
+            <button type="button" class="footer-button" onclick="window.location.href='/ourplants';">Our Plants</button>
+            <button type="button" class="footer-button" onclick="window.location.href='/garden'">My Garden</button>
+            <a href="mailto: b.wildthorn@gmail.com"><button type="button" class="footer-button">Contact Us</button></a>
+        </div>
+    </footer>
+
+    <script src="/js/home.js"></script>

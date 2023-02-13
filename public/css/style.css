@@ -1,0 +1,481 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: var(--text);
+}
+:root {
+    --background: #F6F3E4;
+    --header: #8CB4A2;
+    --cards: #B8DECD;
+    --text: #432a13;
+}
+
+body {
+    /* background: var(--background); */
+    background-image: url(/images/background.png);
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.filigree{
+    width: 180px;
+    height: 70px;
+    margin: 10px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: var(--header);
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo-text {
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 60px;
+    color: var(--text);
+}
+
+.header-button,
+.search-form button,
+.email-me {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 24px;
+    color: var(--text);
+    background: linear-gradient(#F6F3E4, transparent) var(--background);
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 0.7s;
+}
+
+.header-button:hover {
+    /* background-color: #a7987e90; */
+    background-color: #8cb4a2a4;
+}
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 30px;
+    padding: 20px;
+    background: var(--cards);
+}
+
+.poster {
+    width: auto;
+    height: 557px;
+    margin: 10px;
+    border: 8px solid var(--header);
+}
+
+.side-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.description {
+    background: var(--background);
+    border: none;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 30px;
+    padding: 25px;
+    margin: 20px;
+}
+
+.hero-button {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 44px;
+    color: var(--text);
+    background: linear-gradient(#F6F3E4, transparent) var(--background);
+    border: none;
+    padding: 20px;
+    margin: 20px;
+    transition: background-color 0.7s;
+}
+
+.hero-button:hover {
+    background-color: #a7987e90;
+}
+
+.featured,
+.user-plants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured h1,
+.user-plants h1 {
+    font-size: 50px;
+    font-family: 'Fredericka the Great', cursive;
+    line-height: 10px;
+    margin-top: 50px;
+    background: var(--cards);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.user-plants {
+    margin-top: 20px;
+}
+
+.feature-item,
+.user-item {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.item-card {
+    background: var(--cards);
+    padding: 15px;
+    width: 75vw;
+}
+
+.item-card h2,
+.left-card h2 {
+    font-size: 45px;
+    font-family: 'Dawning of a New Day', cursive;
+    line-height: 20px;
+}
+
+.item-card p {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20px;
+}
+
+.feature-item img,
+.user-item img,
+.search-img {
+    width: 273px;
+    height: 273px;
+    border-radius: 100%;
+    border: 8px solid var(--header);
+    margin: 20px;
+}
+
+.feature-button {
+    border: none;
+    font-size: 18px;
+    font-family: 'Fredericka the Great', cursive;
+    padding: 10px;
+    float: right;
+    border-radius: 10px;
+    background: var(--header);
+    background: linear-gradient(#8CB4A2, transparent) var(--header);
+    color: var(--text);
+    transition: background-color 0.7s;
+}
+
+.feature-button:hover {
+    background-color: #25442890;
+}
+
+.all-button {
+    border: none;
+    font-size: 38px;
+    font-family: 'Fredericka the Great', cursive;
+    padding: 15px;
+    float: right;
+    border-radius: 10px;
+    background: var(--header);
+    background: linear-gradient(#8CB4A2, transparent) var(--header);
+    color: var(--text);
+    transition: background-color 0.7s;
+}
+
+.all-button:hover {
+    background-color: #25442890;
+}
+
+.bottom-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px;
+}
+
+.footer-button {
+    border: none;
+    font-size: 48px;
+    font-family: 'Fredericka the Great', cursive;
+    padding: 25px;
+    float: right;
+    border-radius: 10px;
+    background: var(--header);
+    background: linear-gradient(#B8DECD, transparent) var(--cards);
+    color: var(--text);
+    transition: background-color 0.7s;
+}
+
+.footer-button:hover {
+    background-color: #21542790;
+}
+
+
+/* =======SIGN UP PAGE======= */
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.title-card {
+    background: var(--header);
+    text-align: center;
+    padding: 25px;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 50px;
+    border-radius: 5px;
+}
+
+.input-card {
+    display: flex;
+    justify-content: center;
+}
+
+.input-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 25px;
+    background: var(--cards);
+    width: 50%;
+    border: 8px solid var(--header);
+    border-radius: 5px;
+}
+
+.input-info a {
+    margin: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input {
+    height: 30px;
+    width: 30vw;
+    border: none;
+    border-radius: 5px;
+    background: var(--background);
+}
+
+.submit-button {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 25px;
+    color: var(--text);
+    background: linear-gradient(#F6F3E4, transparent) var(--background);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.7s;
+    height: 50px;
+    width: 20vw;
+}
+
+.submit-button:hover {
+    background-color: #a7987e90;
+}
+
+/* ========GARDEN PAGE======== */
+
+.garden {
+    display: flex;
+    flex-direction: column;
+    background: var(--background);
+    border: 8px solid var(--header);
+    width: 95vw;
+    height: auto;
+    margin: 30px;
+}
+
+.plants {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.item {
+    margin: 20px;
+}
+
+.plant-img {
+    width: 273px;
+    height: 273px;
+    border-radius: 100%;
+    border: 8px solid var(--header);
+}
+
+.item p {
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 30px;
+    text-align: center;
+    line-height: 0;
+}
+
+.delete-icon {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+.caption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.search,
+.search-card,
+.search-result,
+.plant-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    justify-content: space-evenly;
+}
+
+.search-form input {
+    height: 45px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.search-form button {
+    padding: 10px;
+}
+
+.search-form button:hover,
+.email-me:hover {
+    background-color: #a7987e90;
+}
+
+.plant-search {
+    background: var(--cards);
+    width: 95vw;
+}
+
+.no-plants {
+    font-family: 'Fredericka the Great', cursive;
+    margin: 200px 90px;
+    text-align: center;
+}
+
+.email-me {
+    margin-left: 30px;
+    margin: 10px;
+}
+
+.search-result {
+    padding: 20px;
+}
+
+.left-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.right-card li,
+.search-description {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20px;
+}
+
+.ailment {
+    font-size: 20px;
+}
+
+.right-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.ailment-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.in-garden {
+    font-size: 30px;
+    width: 50vw;
+    align-self: center;
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20px;
+}
+
+.about-text {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    .logo-text {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .filigree {
+        width: 100px;
+        height: auto;
+    }
+
+    .header-button {
+        margin: 10px;
+        font-size: 18px;
+    }
+
+    .hero,
+    .stats {
+        flex-direction: column;
+    }
+
+    .feature-item {
+        flex-direction: column-reverse;
+    }
+
+
+}
