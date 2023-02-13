@@ -13,3 +13,7 @@ document.getElementById("sign-out-btn").addEventListener("click", (e) => {
     }
   });
 });
+
+Handlebars.registerHelper('lowercase', function(str) {
+  return str.toLowerCase();
+});
