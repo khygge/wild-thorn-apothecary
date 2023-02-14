@@ -149,6 +149,7 @@ header {
     background: var(--cards);
     padding: 15px;
     width: 75vw;
+    margin: 10px;
 }
 
 .item-card h2,
@@ -545,5 +546,9 @@ input {
     .search-result {
         flex-direction: column;
         justify-content: center;
+    }
+
+    .featured h1 {
+        font-size: 40px;
     }
 }
