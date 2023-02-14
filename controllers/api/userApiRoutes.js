@@ -100,6 +100,26 @@ router.post("/signin", (req, res) => {
     });
 });
 
+router.put("/remove/:plantid", async (req, res) => {
+  try {
+    let sessionUserId = req.session.userId;
+    const foundUser = await User.findByPk(sessionUserId, { include: Plant });
+    if (!foundUser) {
+      res.json({ msg: "no such user" });
+    } else {
+      const response = await foundUser.removePlant(req.params.plantid);
+      if (!response) {
+        res.json({ msg: "no such plant" });
+      } else {
+        res.json(response);
+      }
+    }
+  } catch (err) {
+    console.log(err);
+    res.json({ msg: "oops", error: err });
+  }
+});
+
 // Destroys current session.
 router.delete("/logout", (req, res) => {
   req.session.destroy();
