@@ -5,6 +5,7 @@ const searchedImage = document.querySelector("#plantImg");
 const searchedClimate = document.querySelector("#plantClimate");
 const searchedType = document.querySelector("#plantType");
 // Use variable below to get a plant id to call the api to add a plant easier
+const plantDiv = document.querySelector(".plants");
 let plantIdFromSearch;
 
 // Route to sign out
@@ -99,3 +100,40 @@ const appendSearchedPlant = async (plantObj) => {
   searchedClimate.textContent = `Climate: ${climate}`;
   searchedType.textContent = `Type: ${type}`;
 };
+
+plantDiv.addEventListener("click", (e) => {
+  e.preventDefault();
+  let spotClicked = e.target;
+
+  if (spotClicked.matches(".delete-icon")) {
+    let plantClicked =
+      spotClicked.parentNode.parentNode.children[0].textContent;
+    fetch("/api/plants", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        for (let i = 0; i < data.length; i++) {
+          if (plantClicked == data[i].plant_name) {
+            fetch(`/api/users/remove/${data[i].id}`, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }).then((res) => {
+              if (res.ok) {
+                location.reload();
+              } else {
+                console.log("oops!");
+              }
+            });
+          }
+        }
+      });
+  } else {
+    console.log("that aint a plant");
+  }
+});
