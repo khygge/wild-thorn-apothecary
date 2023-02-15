@@ -456,6 +456,20 @@ input {
     text-align: center;
 }
 
+@media screen and (max-width: 1178px) {
+    .side-content {
+        flex-direction: column;
+    }
+
+    .header-button {
+        margin: 5px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width: 1100px) {
     .side-content {
         flex-direction: column;
@@ -463,6 +477,10 @@ input {
 
     .header-button {
         margin: 5px;
+    }
+
+    .logo {
+        width: 80vw;
     }
 }
 
@@ -511,7 +529,8 @@ input {
         flex-direction: column;
     }
 
-    .feature-item {
+    .feature-item,
+    .user-item {
         flex-direction: column-reverse;
     }
 
@@ -550,5 +569,16 @@ input {
 
     .featured h1 {
         font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .poster {
+        height: 500px;
+        width: 400px;
+    }
+
+    .hero {
+        margin: 10px;
     }
 }
